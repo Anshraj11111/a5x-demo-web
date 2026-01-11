@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Green Valley International School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --primary:#0b2c3d;
+      --secondary:#1f7a8c;
+      --accent:#cfa44a;
+      --text:#444;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --transition:.35s ease;
+    }
+
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:#f9f9f9;
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3{
+      font-family:'Poppins',sans-serif;
+      color:var(--primary);
+    }
+
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    .btn{
+      display:inline-block;
+      padding:14px 34px;
+      background:var(--accent);
+      color:#0b2c3d;
+      border-radius:50px;
+      font-weight:600;
+      transition:var(--transition);
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      background:#fff;
+      transform:translateY(-3px);
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      background:#fff;
+      box-shadow:var(--shadow);
+      z-index:1000;
+    }
+
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.8rem;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+    }
+
+    .logo:before{
+      content:"A5x";
+      background:var(--accent);
+      color:#0b2c3d;
+      padding:5px 10px;
+      border-radius:4px;
+      margin-right:10px;
+      font-size:1rem;
+    }
+
+    nav a{
+      margin-left:28px;
+      font-weight:500;
+      position:relative;
+    }
+
+    nav a:after{
+      content:'';
+      position:absolute;
+      left:0;bottom:-6px;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:.3s;
+    }
+
+    nav a:hover:after{width:100%}
+
+    nav .btn{
+      margin-left:30px;
+      padding:10px 24px;
+      border-radius:30px;
+    }
+
+    /* HERO */
+    .page-banner{
+      height:70vh;
+      background:
+        linear-gradient(rgba(11,44,61,.88),rgba(11,44,61,.92)),
+        url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      padding-top:80px;
+    }
+
+    .page-banner h1{
+      font-size:3.4rem;
+      color:#fff;
+      margin-bottom:20px;
+    }
+
+    .page-banner p{
+      font-size:1.3rem;
+      max-width:750px;
+      opacity:.9;
+      margin:0 auto 30px;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:90px 0;
+      text-align:center;
+    }
+
+    .section h2{
+      font-size:2.4rem;
+      margin-bottom:40px;
+      position:relative;
+      display:inline-block;
+    }
+
+    .section h2:after{
+      content:'';
+      width:70px;height:4px;
+      background:var(--accent);
+      display:block;
+      margin:12px auto 0;
+      border-radius:2px;
+    }
+
+    /* INTRO */
+    .intro-content{
+      max-width:900px;
+      margin:auto;
+    }
+
+    .intro-content p{
+      font-size:1.2rem;
+      margin-bottom:25px;
+    }
+
+    .highlight-box{
+      background:#f1f4f7;
+      border-left:5px solid var(--accent);
+      padding:30px;
+      margin:40px 0;
+      font-style:italic;
+      font-size:1.3rem;
+      color:var(--primary);
+    }
+
+    /* CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      margin-top:50px;
+    }
+
+    .card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      text-align:left;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-bottom:5px solid var(--accent);
+    }
+
+    .card i{
+      font-size:2.4rem;
+      color:var(--secondary);
+      margin-bottom:20px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111;
+      color:#ccc;
+      padding:70px 0 30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:40px;
+    }
+
+    footer h3{color:#fff;margin-bottom:20px}
+    footer a{display:block;margin-bottom:10px;color:#ccc}
+    footer a:hover{color:var(--accent)}
+
+    .copyright{
+      text-align:center;
+      margin-top:40px;
+      font-size:.9rem;
+      color:#777;
+    }
+
+    @media(max-width:768px){
+      .page-banner h1{font-size:2.3rem}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">Green Valley International School</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="btn">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div>
+    <h1>Our Journey of Excellence</h1>
+    <p>
+      Discover the values, vision, and commitment that shape
+      Green Valley International School into a center of learning excellence.
+    </p>
+    <a href="#about" class="btn">Explore More</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <h2>Who We Are</h2>
+    <div class="intro-content">
+      <p>
+        <strong>Green Valley International School</strong> is a premier institution
+        committed to nurturing confident learners, ethical leaders,
+        and responsible global citizens.
+      </p>
+
+      <div class="highlight-box">
+        “We don’t just educate students — we empower futures.”
+      </div>
+
+      <p>
+        With a focus on academic excellence, modern infrastructure,
+        and values-based education, we prepare students to thrive
+        in an ever-changing world.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#f0f5f7">
+  <div class="container">
+    <h2>Vision & Mission</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-eye"></i>
+        <h3>Our Vision</h3>
+        <p>
+          To be a globally respected institution delivering holistic,
+          innovative, and future-ready education.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Mission</h3>
+        <p>
+          To empower students through academic excellence,
+          discipline, creativity, and strong moral values.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Our Core Values</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-graduation-cap"></i>Academic Excellence</div>
+      <div class="card"><i class="fas fa-handshake"></i>Integrity & Ethics</div>
+      <div class="card"><i class="fas fa-users"></i>Global Citizenship</div>
+      <div class="card"><i class="fas fa-lightbulb"></i>Innovation & Creativity</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>About Us</h3>
+      <p>
+        Green Valley International School empowers students through
+        global education standards and values-driven learning.
+      </p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Email: info@greenvalley.edu</p>
+      <p>Phone: +91 XXXXXXXXXX</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Green Valley International School | Designed by <strong>A5x</strong>
+  </div>
+</footer>
+
+</body>
+</html>

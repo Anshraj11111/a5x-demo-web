@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Facilities | Green Valley International School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --primary:#0b2c3d;
+      --secondary:#1f7a8c;
+      --accent:#cfa44a;
+      --light:#f4f6f8;
+      --dark:#1c1c1c;
+      --text:#444;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --transition:all .35s ease;
+    }
+
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:#f9f9f9;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    h1,h2,h3{
+      font-family:'Poppins',sans-serif;
+      color:var(--primary);
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      background:#fff;
+      box-shadow:var(--shadow);
+      z-index:1000;
+    }
+
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.7rem;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+    }
+
+    .logo:before{
+      content:"A5x";
+      background:var(--accent);
+      color:#0b2c3d;
+      padding:5px 10px;
+      border-radius:4px;
+      margin-right:10px;
+      font-size:1rem;
+    }
+
+    nav a{
+      margin-left:28px;
+      font-weight:500;
+      position:relative;
+    }
+
+    nav a:after{
+      content:'';
+      position:absolute;
+      left:0;bottom:-6px;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:.3s;
+    }
+
+    nav a:hover:after{width:100%}
+
+    nav .btn{
+      margin-left:30px;
+      padding:10px 24px;
+      background:var(--accent);
+      border-radius:30px;
+      font-weight:600;
+    }
+
+    /* HERO */
+    .hero{
+      height:55vh;
+      background:
+        linear-gradient(rgba(11,44,61,.85),rgba(11,44,61,.9)),
+        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1800&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      padding-top:80px;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      color:#fff;
+      margin-bottom:15px;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:700px;
+      opacity:.9;
+    }
+
+    /* SECTION */
+    .section{
+      padding:90px 0;
+      text-align:center;
+    }
+
+    .section h2{
+      font-size:2.4rem;
+      margin-bottom:40px;
+      position:relative;
+      display:inline-block;
+    }
+
+    .section h2:after{
+      content:'';
+      width:70px;height:4px;
+      background:var(--accent);
+      display:block;
+      margin:12px auto 0;
+      border-radius:2px;
+    }
+
+    /* FACILITY GRID */
+    .facility-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+      margin-top:50px;
+    }
+
+    .facility-card{
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      text-align:left;
+    }
+
+    .facility-card:hover{
+      transform:translateY(-12px);
+    }
+
+    .facility-img{
+      height:220px;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .facility-content{
+      padding:30px;
+    }
+
+    .facility-content i{
+      font-size:2.2rem;
+      color:var(--secondary);
+      margin-bottom:15px;
+    }
+
+    .facility-content h3{
+      margin-bottom:12px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111;
+      color:#ccc;
+      padding:70px 0 30px;
+    }
+
+    footer h3{color:#fff;margin-bottom:20px}
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:40px;
+    }
+
+    footer a{display:block;margin-bottom:10px;color:#ccc}
+    footer a:hover{color:var(--accent)}
+
+    .copyright{
+      text-align:center;
+      margin-top:40px;
+      font-size:.9rem;
+      color:#777;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @media(max-width:768px){
+      .hero h1{font-size:2.3rem}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">Green Valley International School</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="btn">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>World-Class Facilities</h1>
+    <p>
+      Modern infrastructure designed to support academic excellence,
+      creativity, physical development, and student well-being.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Our Infrastructure</h2>
+
+    <div class="facility-grid">
+
+      <div class="facility-card">
+        <div class="facility-img" style="background-image:url('https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="facility-content">
+          <i class="fas fa-book"></i>
+          <h3>Knowledge Resource Centre</h3>
+          <p>
+            A modern library equipped with physical books, digital
+            resources, and quiet reading spaces.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img" style="background-image:url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="facility-content">
+          <i class="fas fa-desktop"></i>
+          <h3>Advanced Computer Labs</h3>
+          <p>
+            High-tech labs with modern systems, internet connectivity,
+            and hands-on learning tools.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="facility-content">
+          <i class="fas fa-futbol"></i>
+          <h3>Sports & Fitness Arena</h3>
+          <p>
+            Spacious playgrounds and sports facilities promoting
+            physical fitness and teamwork.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img" style="background-image:url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="facility-content">
+          <i class="fas fa-bus"></i>
+          <h3>Safe Transport Facility</h3>
+          <p>
+            GPS-enabled school transport ensuring safe and reliable
+            commuting for students.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>About Us</h3>
+      <p>
+        Green Valley International School empowers students through
+        innovation, discipline, and global education standards.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Email: info@greenvalley.edu</p>
+      <p>Phone: +91 XXXXXXXXXX</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Green Valley International School | Designed by <strong>A5x</strong>
+  </div>
+</footer>
+
+</body>
+</html>

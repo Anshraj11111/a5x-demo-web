@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions | Green Valley International School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --primary:#0b2c3d;
+      --secondary:#1f7a8c;
+      --accent:#cfa44a;
+      --light:#f4f6f8;
+      --dark:#1c1c1c;
+      --text:#444;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --transition:all .35s ease;
+    }
+
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:#f9f9f9;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    h1,h2,h3{
+      font-family:'Poppins',sans-serif;
+      color:var(--primary);
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      background:#fff;
+      box-shadow:var(--shadow);
+      z-index:1000;
+    }
+
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.8rem;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+    }
+
+    .logo:before{
+      content:"A5x";
+      background:var(--accent);
+      color:#0b2c3d;
+      padding:5px 10px;
+      border-radius:4px;
+      margin-right:10px;
+      font-size:1rem;
+    }
+
+    nav a{
+      margin-left:28px;
+      font-weight:500;
+      position:relative;
+    }
+
+    nav a:after{
+      content:'';
+      position:absolute;
+      left:0;bottom:-6px;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:.3s;
+    }
+
+    nav a:hover:after{width:100%}
+
+    nav .btn{
+      margin-left:30px;
+      padding:10px 24px;
+      background:var(--accent);
+      border-radius:30px;
+      font-weight:600;
+    }
+
+    /* HERO */
+    .hero{
+      height:60vh;
+      background:
+        linear-gradient(rgba(11,44,61,.85),rgba(11,44,61,.9)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      padding-top:80px;
+    }
+
+    .hero h1{
+      font-size:3.2rem;
+      color:#fff;
+      margin-bottom:15px;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:750px;
+      opacity:.9;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:90px 0;
+      text-align:center;
+    }
+
+    .section h2{
+      font-size:2.4rem;
+      margin-bottom:40px;
+      position:relative;
+      display:inline-block;
+    }
+
+    .section h2:after{
+      content:'';
+      width:70px;height:4px;
+      background:var(--accent);
+      display:block;
+      margin:12px auto 0;
+      border-radius:2px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      margin-top:50px;
+    }
+
+    .card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      text-align:left;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-bottom:5px solid var(--accent);
+    }
+
+    .card i{
+      font-size:2.4rem;
+      color:var(--secondary);
+      margin-bottom:20px;
+    }
+
+    /* FORM */
+    .form-section{
+      background:#f0f5f7;
+    }
+
+    form{
+      max-width:700px;
+      margin:40px auto 0;
+      background:#fff;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      text-align:left;
+    }
+
+    form .form-group{
+      margin-bottom:20px;
+    }
+
+    form label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    form input, form select, form textarea{
+      width:100%;
+      padding:12px 15px;
+      border:1px solid #ddd;
+      border-radius:6px;
+      font-size:1rem;
+      outline:none;
+    }
+
+    form textarea{
+      resize:none;
+      height:120px;
+    }
+
+    form button{
+      margin-top:15px;
+      border:none;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111;
+      color:#ccc;
+      padding:70px 0 30px;
+    }
+
+    footer h3{color:#fff;margin-bottom:20px}
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:40px;
+    }
+
+    footer a{display:block;margin-bottom:10px;color:#ccc}
+    footer a:hover{color:var(--accent)}
+
+    .copyright{
+      text-align:center;
+      margin-top:40px;
+      font-size:.9rem;
+      color:#777;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @media(max-width:768px){
+      .hero h1{font-size:2.3rem}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">Green Valley International School</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="btn">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Admissions Open</h1>
+    <p>
+      Begin your child’s journey towards academic excellence and
+      holistic development with Green Valley International School.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Admission Process</h2>
+    <p>
+      Our admission process is designed to be simple, transparent,
+      and parent-friendly. We welcome students who are eager to learn
+      and grow in a nurturing environment.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Step 1: Enquiry</h3>
+        <p>
+          Parents may contact the school or submit an enquiry form
+          to receive admission details.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-file-alt"></i>
+        <h3>Step 2: Application</h3>
+        <p>
+          Complete the application form along with required documents
+          for initial evaluation.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-comments"></i>
+        <h3>Step 3: Interaction</h3>
+        <p>
+          An interaction or assessment may be conducted depending
+          on the grade applied for.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-check-circle"></i>
+        <h3>Step 4: Confirmation</h3>
+        <p>
+          Upon successful completion, admission confirmation
+          will be provided by the school.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section form-section">
+  <div class="container">
+    <h2>Admission Enquiry Form</h2>
+    <p>
+      Fill out the form below and our admission team will
+      get in touch with you shortly.
+    </p>
+
+    <form>
+      <div class="form-group">
+        <label>Parent Name</label>
+        <input type="text" placeholder="Enter parent name">
+      </div>
+
+      <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" placeholder="Enter student name">
+      </div>
+
+      <div class="form-group">
+        <label>Grade Applying For</label>
+        <select>
+          <option>Select Grade</option>
+          <option>Pre-Primary</option>
+          <option>Primary</option>
+          <option>Secondary</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="text" placeholder="Enter phone number">
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Write your message"></textarea>
+      </div>
+
+      <button class="btn">Submit Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>About Us</h3>
+      <p>
+        Green Valley International School empowers students through
+        innovation, discipline, and global education standards.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Email: info@greenvalley.edu</p>
+      <p>Phone: +91 XXXXXXXXXX</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Green Valley International School | Designed by <strong>A5x</strong>
+  </div>
+</footer>
+
+</body>
+</html>
