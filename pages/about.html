@@ -1,293 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Green Valley International School</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Green Valley International School</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0b2c3d;
+  --secondary:#1f7a8c;
+  --accent:#cfa44a;
+  --text:#444;
+  --light:#f9f9f9;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --transition:.35s ease;
+}
 
-    :root{
-      --primary:#0b2c3d;
-      --secondary:#1f7a8c;
-      --accent:#cfa44a;
-      --text:#444;
-      --light:#f9f9f9;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --transition:.35s ease;
-    }
+body{
+  font-family:'Open Sans',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    body{
-      font-family:'Open Sans',sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
+h1,h2,h3{
+  font-family:'Poppins',sans-serif;
+  color:var(--primary);
+}
 
-    h1,h2,h3{
-      font-family:'Poppins',sans-serif;
-      color:var(--primary);
-    }
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--accent);
+  color:#0b2c3d;
+  border-radius:50px;
+  font-weight:600;
+  transition:var(--transition);
+}
 
-    .btn{
-      display:inline-block;
-      padding:14px 34px;
-      background:var(--accent);
-      color:#0b2c3d;
-      border-radius:50px;
-      font-weight:600;
-      transition:var(--transition);
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
+.btn:hover{background:#fff}
 
-    .btn:hover{background:#fff}
+/* ================= NAVBAR (SAME AS INDEX) ================= */
+header{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  background:#fff;
+  box-shadow:var(--shadow);
+  z-index:1000;
+}
 
-    /* HEADER */
-    header{
-      position:fixed;
-      top:0;left:0;
-      width:100%;
-      background:#fff;
-      box-shadow:var(--shadow);
-      z-index:1000;
-    }
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  gap:10px;
+}
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:75%;
+}
 
-    .logo{
-      font-size:1.6rem;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-    }
+.brand{
+  background:var(--accent);
+  color:#0b2c3d;
+  padding:6px 10px;
+  border-radius:4px;
+  font-weight:700;
+  font-size:.9rem;
+  white-space:nowrap;
+}
 
-    .logo:before{
-      content:"A5x";
-      background:var(--accent);
-      color:#0b2c3d;
-      padding:5px 10px;
-      border-radius:4px;
-      margin-right:10px;
-      font-size:.9rem;
-    }
+.school-name{
+  font-size:1.1rem;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--primary);
+}
 
-    nav{
-      display:flex;
-      align-items:center;
-    }
+nav{
+  display:flex;
+  align-items:center;
+}
 
-    nav a{
-      margin-left:26px;
-      font-weight:500;
-      position:relative;
-    }
+nav a{
+  margin-left:24px;
+  font-weight:500;
+  position:relative;
+}
 
-    nav a:after{
-      content:'';
-      position:absolute;
-      left:0;bottom:-6px;
-      width:0;height:2px;
-      background:var(--accent);
-      transition:.3s;
-    }
+nav a:after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-6px;
+  width:0; height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
 
-    nav a:hover:after{width:100%}
+nav a:hover:after{width:100%}
 
-    nav .btn{
-      margin-left:30px;
-      padding:10px 24px;
-    }
+.menu-btn{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+}
 
-    .menu-btn{
-      display:none;
-      font-size:1.6rem;
-      cursor:pointer;
-    }
+/* ================= HERO ================= */
+.page-banner{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:120px 20px 60px;
+}
 
-    /* HERO */
-    .page-banner{
-      min-height:70vh;
-      background:
-        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
-        url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-      padding:120px 20px 60px;
-    }
+.page-banner h1{
+  font-size:3rem;
+  color:#fff;
+  margin-bottom:20px;
+}
 
-    .page-banner h1{
-      font-size:3.2rem;
-      color:#fff;
-      margin-bottom:20px;
-    }
+.page-banner p{
+  font-size:1.2rem;
+  max-width:800px;
+  margin:auto;
+  opacity:.9;
+}
 
-    .page-banner p{
-      font-size:1.2rem;
-      max-width:800px;
-      margin:0 auto 30px;
-      opacity:.9;
-    }
+/* ================= SECTIONS ================= */
+.section{
+  padding:90px 0;
+  text-align:center;
+}
 
-    /* SECTIONS */
-    .section{
-      padding:90px 0;
-      text-align:center;
-    }
+.section h2{
+  font-size:2.4rem;
+  margin-bottom:40px;
+  position:relative;
+  display:inline-block;
+}
 
-    .section h2{
-      font-size:2.4rem;
-      margin-bottom:40px;
-      position:relative;
-      display:inline-block;
-    }
+.section h2:after{
+  content:'';
+  width:70px;height:4px;
+  background:var(--accent);
+  display:block;
+  margin:12px auto 0;
+  border-radius:2px;
+}
 
-    .section h2:after{
-      content:'';
-      width:70px;height:4px;
-      background:var(--accent);
-      display:block;
-      margin:12px auto 0;
-      border-radius:2px;
-    }
+.intro-content{
+  max-width:900px;
+  margin:auto;
+  font-size:1.15rem;
+}
 
-    /* INTRO */
-    .intro-content{
-      max-width:900px;
-      margin:auto;
-    }
+.highlight-box{
+  background:#f1f4f7;
+  border-left:5px solid var(--accent);
+  padding:30px;
+  margin:40px 0;
+  font-style:italic;
+  font-size:1.25rem;
+}
 
-    .intro-content p{
-      font-size:1.15rem;
-      margin-bottom:25px;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  margin-top:50px;
+}
 
-    .highlight-box{
-      background:#f1f4f7;
-      border-left:5px solid var(--accent);
-      padding:30px;
-      margin:40px 0;
-      font-style:italic;
-      font-size:1.25rem;
-      color:var(--primary);
-    }
+.card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+}
 
-    /* CARDS */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:30px;
-      margin-top:50px;
-    }
+.card:hover{transform:translateY(-10px)}
 
-    .card{
-      background:#fff;
-      padding:40px 30px;
-      border-radius:14px;
-      box-shadow:var(--shadow);
-      transition:var(--transition);
-      text-align:center;
-    }
+.card i{
+  font-size:2.4rem;
+  color:var(--secondary);
+  margin-bottom:15px;
+}
 
-    .card:hover{transform:translateY(-10px)}
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  padding:70px 0 30px;
+}
 
-    .card i{
-      font-size:2.4rem;
-      color:var(--secondary);
-      margin-bottom:20px;
-    }
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
 
-    /* FOOTER */
-    footer{
-      background:#111;
-      color:#ccc;
-      padding:70px 0 30px;
-    }
+footer h3{color:#fff;margin-bottom:20px}
+footer a{display:block;margin-bottom:10px;color:#ccc}
+footer a:hover{color:var(--accent)}
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-    }
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  font-size:.9rem;
+  color:#777;
+}
 
-    footer h3{color:#fff;margin-bottom:20px}
-    footer a{display:block;margin-bottom:10px;color:#ccc}
-    footer a:hover{color:var(--accent)}
+/* ================= RESPONSIVE ================= */
+@media(max-width:992px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-    .copyright{
-      text-align:center;
-      margin-top:40px;
-      font-size:.9rem;
-      color:#777;
-    }
+@media(max-width:768px){
+  .logo{max-width:85%}
+  .school-name{font-size:1rem}
 
-    /* RESPONSIVE */
-    @media(max-width:992px){
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:repeat(2,1fr)}
-      .page-banner h1{font-size:2.6rem}
-    }
+  nav{
+    position:fixed;
+    top:70px;
+    left:-100%;
+    width:100%;
+    flex-direction:column;
+    background:#fff;
+    padding:30px 0;
+    transition:.3s;
+  }
 
-    @media(max-width:768px){
-      nav{
-        position:fixed;
-        top:70px;left:-100%;
-        width:100%;
-        flex-direction:column;
-        background:#fff;
-        padding:30px 0;
-        transition:.3s;
-      }
+  nav.active{left:0}
 
-      nav.active{left:0}
+  nav a{margin:15px 0;font-size:1.1rem}
 
-      nav a{margin:15px 0;font-size:1.1rem}
+  .menu-btn{display:block}
 
-      .menu-btn{display:block}
-
-      .cards{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
-      .page-banner h1{font-size:2.2rem}
-      .btn{width:100%;max-width:300px}
-    }
-  </style>
+  .cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .page-banner h1{font-size:2.2rem}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="container header-inner">
-    <div class="logo">Green Valley International School</div>
+    <div class="logo">
+      <span class="brand">A5x</span>
+      <span class="school-name">Green Valley International School</span>
+    </div>
+
     <div class="menu-btn"><i class="fas fa-bars"></i></div>
-    <nav>
+
+    <nav id="mainNav">
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="admissions.html">Admissions</a>
+      <a href="facilities.html">Facilities</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="btn">Enquire</a>
     </nav>
@@ -297,29 +294,17 @@
 <section class="page-banner">
   <div>
     <h1>Our Journey of Excellence</h1>
-    <p>
-      Discover the values, vision, and commitment that shape
-      Green Valley International School into a center of learning excellence.
-    </p>
-    <a href="#about" class="btn">Explore More</a>
+    <p>Building confident learners, ethical leaders, and global citizens.</p>
   </div>
 </section>
 
-<section class="section" id="about">
+<section class="section">
   <div class="container">
     <h2>Who We Are</h2>
     <div class="intro-content">
-      <p><strong>Green Valley International School</strong> nurtures confident learners, ethical leaders, and responsible global citizens.</p>
-
-      <div class="highlight-box">
-        “We don’t just educate students — we empower futures.”
-      </div>
-
-      <p>
-        Through academic excellence, modern infrastructure,
-        and values-based education, we prepare students
-        to succeed in a dynamic global environment.
-      </p>
+      <p><strong>Green Valley International School</strong> is committed to holistic education.</p>
+      <div class="highlight-box">“We don’t just educate students — we empower futures.”</div>
+      <p>Our focus is academic excellence, values, innovation, and leadership.</p>
     </div>
   </div>
 </section>
@@ -328,20 +313,8 @@
   <div class="container">
     <h2>Vision & Mission</h2>
     <div class="cards">
-      <div class="card"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>Globally respected, future-ready education.</p></div>
-      <div class="card"><i class="fas fa-bullseye"></i><h3>Our Mission</h3><p>Empowering students through excellence and values.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Our Core Values</h2>
-    <div class="cards">
-      <div class="card"><i class="fas fa-graduation-cap"></i>Academic Excellence</div>
-      <div class="card"><i class="fas fa-handshake"></i>Integrity & Ethics</div>
-      <div class="card"><i class="fas fa-users"></i>Global Citizenship</div>
-      <div class="card"><i class="fas fa-lightbulb"></i>Innovation & Creativity</div>
+      <div class="card"><i class="fas fa-eye"></i><h3>Vision</h3><p>Future-ready global education.</p></div>
+      <div class="card"><i class="fas fa-bullseye"></i><h3>Mission</h3><p>Empowering students with values & excellence.</p></div>
     </div>
   </div>
 </section>
@@ -349,13 +322,12 @@
 <footer>
   <div class="container footer-grid">
     <div>
-      <h3>About Us</h3>
-      <p>Green Valley International School delivers excellence through innovation and global education.</p>
+      <h3>About</h3>
+      <p>Green Valley International School delivers excellence through innovation.</p>
     </div>
     <div>
       <h3>Quick Links</h3>
       <a href="../index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="admissions.html">Admissions</a>
     </div>
@@ -372,9 +344,9 @@
 </footer>
 
 <script>
-  const menuBtn=document.querySelector('.menu-btn');
-  const nav=document.querySelector('nav');
-  menuBtn.onclick=()=>nav.classList.toggle('active');
+const menuBtn=document.querySelector('.menu-btn');
+const nav=document.querySelector('#mainNav');
+menuBtn.onclick=()=>nav.classList.toggle('active');
 </script>
 
 </body>

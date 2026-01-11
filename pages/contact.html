@@ -1,322 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contact Us | Green Valley International School</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us | Green Valley International School</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0b2c3d;
+  --secondary:#1f7a8c;
+  --accent:#cfa44a;
+  --text:#444;
+  --light:#f9f9f9;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --transition:.35s ease;
+}
 
-    :root{
-      --primary:#0b2c3d;
-      --secondary:#1f7a8c;
-      --accent:#cfa44a;
-      --text:#444;
-      --light:#f9f9f9;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --transition:.35s ease;
-    }
+body{
+  font-family:'Open Sans',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
-    body{
-      font-family:'Open Sans',sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
+h1,h2,h3{
+  font-family:'Poppins',sans-serif;
+  color:var(--primary);
+}
 
-    h1,h2,h3{
-      font-family:'Poppins',sans-serif;
-      color:var(--primary);
-    }
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--accent);
+  color:#0b2c3d;
+  border-radius:50px;
+  font-weight:600;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+  border:none;
+  cursor:pointer;
+}
+.btn:hover{background:#fff}
 
-    /* HEADER */
-    header{
-      position:fixed;
-      top:0;left:0;
-      width:100%;
-      background:#fff;
-      box-shadow:var(--shadow);
-      z-index:1000;
-    }
+/* ================= NAVBAR (SAME AS INDEX) ================= */
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#fff;
+  box-shadow:var(--shadow);
+  z-index:1000;
+}
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  gap:10px;
+}
 
-    .logo{
-      font-size:1.6rem;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:75%;
+}
 
-    .logo:before{
-      content:"A5x";
-      background:var(--accent);
-      color:#0b2c3d;
-      padding:5px 10px;
-      border-radius:4px;
-      margin-right:10px;
-      font-size:.9rem;
-    }
+.brand{
+  background:var(--accent);
+  color:#0b2c3d;
+  padding:6px 10px;
+  border-radius:4px;
+  font-weight:700;
+  font-size:.9rem;
+  white-space:nowrap;
+}
 
-    nav{
-      display:flex;
-      align-items:center;
-    }
+.school-name{
+  font-size:1.1rem;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--primary);
+}
 
-    nav a{
-      margin-left:26px;
-      font-weight:500;
-      position:relative;
-    }
+nav{
+  display:flex;
+  align-items:center;
+}
 
-    nav a:after{
-      content:'';
-      position:absolute;
-      left:0;bottom:-6px;
-      width:0;height:2px;
-      background:var(--accent);
-      transition:.3s;
-    }
+nav a{
+  margin-left:24px;
+  font-weight:500;
+  position:relative;
+}
 
-    nav a:hover:after{width:100%}
+nav a:after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
 
-    nav .btn{
-      margin-left:30px;
-      padding:10px 24px;
-      background:var(--accent);
-      border-radius:30px;
-      font-weight:600;
-    }
+nav a:hover:after{width:100%}
 
-    .menu-btn{
-      display:none;
-      font-size:1.6rem;
-      cursor:pointer;
-    }
+.menu-btn{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+}
 
-    /* HERO */
-    .hero{
-      min-height:50vh;
-      background:
-        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
-        url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-      padding:120px 20px 60px;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:50vh;
+  background:
+    linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:120px 20px 60px;
+}
 
-    .hero h1{
-      font-size:3rem;
-      color:#fff;
-      margin-bottom:15px;
-    }
+.hero h1{
+  font-size:3rem;
+  color:#fff;
+  margin-bottom:15px;
+}
 
-    .hero p{
-      font-size:1.2rem;
-      max-width:750px;
-      opacity:.9;
-      margin:auto;
-    }
+.hero p{
+  font-size:1.2rem;
+  max-width:750px;
+  margin:auto;
+  opacity:.9;
+}
 
-    /* SECTION */
-    .section{
-      padding:90px 0;
-    }
+/* ================= SECTIONS ================= */
+.section{
+  padding:90px 0;
+}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
 
-    .section-title h2{
-      font-size:2.4rem;
-      display:inline-block;
-      position:relative;
-    }
+.section-title h2{
+  font-size:2.4rem;
+  position:relative;
+  display:inline-block;
+}
 
-    .section-title h2:after{
-      content:'';
-      width:70px;height:4px;
-      background:var(--accent);
-      display:block;
-      margin:12px auto 0;
-      border-radius:2px;
-    }
+.section-title h2:after{
+  content:'';
+  width:70px;height:4px;
+  background:var(--accent);
+  display:block;
+  margin:12px auto 0;
+  border-radius:2px;
+}
 
-    /* CONTACT GRID */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-      margin-bottom:80px;
-    }
+/* ================= CONTACT INFO ================= */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  margin-bottom:80px;
+}
 
-    .contact-card{
-      background:#fff;
-      padding:40px 30px;
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      text-align:center;
-      transition:var(--transition);
-    }
+.contact-card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:var(--transition);
+}
 
-    .contact-card:hover{
-      transform:translateY(-10px);
-    }
+.contact-card:hover{
+  transform:translateY(-10px);
+}
 
-    .contact-card i{
-      font-size:2.2rem;
-      color:var(--accent);
-      margin-bottom:20px;
-    }
+.contact-card i{
+  font-size:2.2rem;
+  color:var(--accent);
+  margin-bottom:20px;
+}
 
-    /* FORM */
-    .contact-form{
-      background:#fff;
-      padding:50px;
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      max-width:800px;
-      margin:auto;
-    }
+/* ================= FORM ================= */
+.contact-form{
+  background:#fff;
+  padding:50px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  max-width:800px;
+  margin:auto;
+}
 
-    .form-group{
-      margin-bottom:25px;
-    }
+.form-group{margin-bottom:25px}
 
-    input,textarea{
-      width:100%;
-      padding:14px 16px;
-      border-radius:8px;
-      border:1px solid #ddd;
-      font-size:1rem;
-    }
+input,textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:1rem;
+}
 
-    textarea{
-      resize:none;
-      height:140px;
-    }
+textarea{resize:none;height:140px}
 
-    input:focus,textarea:focus{
-      outline:none;
-      border-color:var(--secondary);
-    }
+input:focus,textarea:focus{
+  outline:none;
+  border-color:var(--secondary);
+}
 
-    .submit-btn{
-      background:var(--accent);
-      border:none;
-      padding:14px 40px;
-      font-size:1rem;
-      font-weight:600;
-      border-radius:30px;
-      cursor:pointer;
-    }
+/* ================= MAP ================= */
+.map{
+  margin-top:80px;
+  height:380px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
 
-    /* MAP */
-    .map{
-      margin-top:80px;
-      height:380px;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
 
-    .map iframe{
-      width:100%;
-      height:100%;
-      border:0;
-    }
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  padding:60px 0 30px;
+  margin-top:80px;
+}
 
-    /* FOOTER */
-    footer{
-      background:#111;
-      color:#ccc;
-      padding:60px 0 30px;
-      margin-top:80px;
-    }
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-    }
+footer h3{color:#fff;margin-bottom:20px}
+footer a{display:block;margin-bottom:10px;color:#ccc}
+footer a:hover{color:var(--accent)}
 
-    footer h3{color:#fff;margin-bottom:20px}
-    footer a{display:block;margin-bottom:10px;color:#ccc}
-    footer a:hover{color:var(--accent)}
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  font-size:.9rem;
+  color:#777;
+}
 
-    .copyright{
-      text-align:center;
-      margin-top:40px;
-      font-size:.9rem;
-      color:#777;
-    }
+/* ================= RESPONSIVE ================= */
+@media(max-width:1100px){
+  .contact-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-    /* RESPONSIVE */
-    @media(max-width:1100px){
-      .contact-grid{grid-template-columns:repeat(2,1fr)}
-    }
+@media(max-width:768px){
+  .logo{max-width:85%}
+  .school-name{font-size:1rem}
 
-    @media(max-width:768px){
-      nav{
-        position:fixed;
-        top:70px;left:-100%;
-        width:100%;
-        flex-direction:column;
-        background:#fff;
-        padding:30px 0;
-        transition:.3s;
-      }
+  nav{
+    position:fixed;
+    top:70px;
+    left:-100%;
+    width:100%;
+    flex-direction:column;
+    background:#fff;
+    padding:30px 0;
+    transition:.3s;
+  }
 
-      nav.active{left:0}
-      nav a{margin:15px 0;font-size:1.1rem}
+  nav.active{left:0}
+  nav a{margin:15px 0;font-size:1.1rem}
 
-      .menu-btn{display:block}
+  .menu-btn{display:block}
 
-      .contact-grid{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
 
-      .hero h1{font-size:2.2rem}
-      .contact-form{padding:30px}
-    }
-  </style>
+  .hero h1{font-size:2.2rem}
+  .contact-form{padding:30px}
+  .btn{width:100%;max-width:320px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="container header-inner">
-    <div class="logo">Green Valley International School</div>
+    <div class="logo">
+      <span class="brand">A5x</span>
+      <span class="school-name">Green Valley International School</span>
+    </div>
+
     <div class="menu-btn"><i class="fas fa-bars"></i></div>
-    <nav>
+
+    <nav id="mainNav">
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="admissions.html">Admissions</a>
+      <a href="facilities.html">Facilities</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="btn">Enquire</a>
     </nav>
@@ -375,7 +382,7 @@
         <textarea placeholder="Your Message"></textarea>
       </div>
       <div style="text-align:center">
-        <button class="submit-btn">Submit Enquiry</button>
+        <button class="btn">Submit Enquiry</button>
       </div>
     </form>
 
@@ -414,9 +421,9 @@
 </footer>
 
 <script>
-  const menuBtn=document.querySelector('.menu-btn');
-  const nav=document.querySelector('nav');
-  menuBtn.onclick=()=>nav.classList.toggle('active');
+const menuBtn=document.querySelector('.menu-btn');
+const nav=document.querySelector('#mainNav');
+menuBtn.onclick=()=>nav.classList.toggle('active');
 </script>
 
 </body>

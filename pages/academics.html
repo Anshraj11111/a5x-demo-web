@@ -1,279 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academics | Green Valley International School</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Academics | Green Valley International School</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0b2c3d;
+  --secondary:#1f7a8c;
+  --accent:#cfa44a;
+  --text:#444;
+  --light:#f9f9f9;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --transition:.35s ease;
+}
 
-    :root{
-      --primary:#0b2c3d;
-      --secondary:#1f7a8c;
-      --accent:#cfa44a;
-      --light:#f9f9f9;
-      --text:#444;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --transition:.35s ease;
-    }
+body{
+  font-family:'Open Sans',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
-    body{
-      font-family:'Open Sans',sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
+h1,h2,h3{
+  font-family:'Poppins',sans-serif;
+  color:var(--primary);
+}
 
-    h1,h2,h3{
-      font-family:'Poppins',sans-serif;
-      color:var(--primary);
-    }
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--accent);
+  color:#0b2c3d;
+  border-radius:50px;
+  font-weight:600;
+  transition:var(--transition);
+  box-shadow:var(--shadow);
+}
+.btn:hover{background:#fff}
 
-    .btn{
-      display:inline-block;
-      padding:14px 34px;
-      background:var(--accent);
-      color:#0b2c3d;
-      border-radius:50px;
-      font-weight:600;
-      box-shadow:var(--shadow);
-      transition:var(--transition);
-      text-align:center;
-    }
+/* ================= NAVBAR (SAME AS INDEX) ================= */
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#fff;
+  box-shadow:var(--shadow);
+  z-index:1000;
+}
 
-    .btn:hover{background:#fff}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  gap:10px;
+}
 
-    /* HEADER */
-    header{
-      position:fixed;
-      top:0;left:0;
-      width:100%;
-      background:#fff;
-      box-shadow:var(--shadow);
-      z-index:1000;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:75%;
+}
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
+.brand{
+  background:var(--accent);
+  color:#0b2c3d;
+  padding:6px 10px;
+  border-radius:4px;
+  font-weight:700;
+  font-size:.9rem;
+  white-space:nowrap;
+}
 
-    .logo{
-      font-size:1.6rem;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-    }
+.school-name{
+  font-size:1.1rem;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--primary);
+}
 
-    .logo:before{
-      content:"A5x";
-      background:var(--accent);
-      color:#0b2c3d;
-      padding:5px 10px;
-      border-radius:4px;
-      margin-right:10px;
-      font-size:.9rem;
-    }
+nav{
+  display:flex;
+  align-items:center;
+}
 
-    nav{
-      display:flex;
-      align-items:center;
-    }
+nav a{
+  margin-left:24px;
+  font-weight:500;
+  position:relative;
+}
 
-    nav a{
-      margin-left:26px;
-      font-weight:500;
-      position:relative;
-    }
+nav a:after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
 
-    nav a:after{
-      content:'';
-      position:absolute;
-      left:0;bottom:-6px;
-      width:0;height:2px;
-      background:var(--accent);
-      transition:.3s;
-    }
+nav a:hover:after{width:100%}
 
-    nav a:hover:after{width:100%}
+.menu-btn{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+}
 
-    nav .btn{
-      margin-left:30px;
-      padding:10px 24px;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:60vh;
+  background:
+    linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
+    url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:120px 20px 60px;
+}
 
-    .menu-btn{
-      display:none;
-      font-size:1.6rem;
-      cursor:pointer;
-    }
+.hero h1{
+  font-size:3rem;
+  color:#fff;
+  margin-bottom:15px;
+}
 
-    /* HERO */
-    .hero{
-      min-height:60vh;
-      background:
-        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
-        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-      padding:120px 20px 60px;
-    }
+.hero p{
+  font-size:1.2rem;
+  max-width:800px;
+  margin:auto;
+  opacity:.9;
+}
 
-    .hero h1{
-      font-size:3.1rem;
-      color:#fff;
-      margin-bottom:15px;
-    }
+/* ================= SECTIONS ================= */
+.section{
+  padding:90px 0;
+  text-align:center;
+}
 
-    .hero p{
-      font-size:1.2rem;
-      max-width:800px;
-      opacity:.9;
-      margin:auto;
-    }
+.section h2{
+  font-size:2.4rem;
+  margin-bottom:40px;
+  position:relative;
+  display:inline-block;
+}
 
-    /* SECTIONS */
-    .section{
-      padding:90px 0;
-      text-align:center;
-    }
+.section h2:after{
+  content:'';
+  width:70px;height:4px;
+  background:var(--accent);
+  display:block;
+  margin:12px auto 0;
+  border-radius:2px;
+}
 
-    .section h2{
-      font-size:2.4rem;
-      margin-bottom:40px;
-      position:relative;
-      display:inline-block;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:50px;
+}
 
-    .section h2:after{
-      content:'';
-      width:70px;height:4px;
-      background:var(--accent);
-      display:block;
-      margin:12px auto 0;
-      border-radius:2px;
-    }
+.card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+  text-align:left;
+}
 
-    /* CARDS */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-      margin-top:50px;
-    }
+.card:hover{
+  transform:translateY(-10px);
+  border-bottom:5px solid var(--accent);
+}
 
-    .card{
-      background:#fff;
-      padding:40px 30px;
-      border-radius:14px;
-      box-shadow:var(--shadow);
-      transition:var(--transition);
-      text-align:left;
-    }
+.card i{
+  font-size:2.4rem;
+  color:var(--secondary);
+  margin-bottom:20px;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      border-bottom:5px solid var(--accent);
-    }
+.alt-bg{background:#f0f5f7}
 
-    .card i{
-      font-size:2.4rem;
-      color:var(--secondary);
-      margin-bottom:20px;
-    }
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  padding:70px 0 30px;
+}
 
-    .card h3{margin-bottom:12px}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
 
-    .alt-bg{background:#f0f5f7}
+footer h3{color:#fff;margin-bottom:20px}
+footer a{display:block;margin-bottom:10px;color:#ccc}
+footer a:hover{color:var(--accent)}
 
-    /* FOOTER */
-    footer{
-      background:#111;
-      color:#ccc;
-      padding:70px 0 30px;
-    }
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  font-size:.9rem;
+  color:#777;
+}
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-    }
+/* ================= RESPONSIVE ================= */
+@media(max-width:992px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-    footer h3{color:#fff;margin-bottom:20px}
-    footer a{display:block;margin-bottom:10px;color:#ccc}
-    footer a:hover{color:var(--accent)}
+@media(max-width:768px){
+  .logo{max-width:85%}
+  .school-name{font-size:1rem}
 
-    .copyright{
-      text-align:center;
-      margin-top:40px;
-      font-size:.9rem;
-      color:#777;
-    }
+  nav{
+    position:fixed;
+    top:70px;
+    left:-100%;
+    width:100%;
+    flex-direction:column;
+    background:#fff;
+    padding:30px 0;
+    transition:.3s;
+  }
 
-    /* RESPONSIVE */
-    @media(max-width:992px){
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:repeat(2,1fr)}
-      .hero h1{font-size:2.6rem}
-    }
+  nav.active{left:0}
+  nav a{margin:15px 0;font-size:1.1rem}
 
-    @media(max-width:768px){
-      nav{
-        position:fixed;
-        top:70px;left:-100%;
-        width:100%;
-        flex-direction:column;
-        background:#fff;
-        padding:30px 0;
-        transition:.3s;
-      }
+  .menu-btn{display:block}
 
-      nav.active{left:0}
-
-      nav a{margin:15px 0;font-size:1.1rem}
-
-      .menu-btn{display:block}
-
-      .cards{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
-      .hero h1{font-size:2.2rem}
-      .btn{width:100%;max-width:320px}
-    }
-  </style>
+  .cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="container header-inner">
-    <div class="logo">Green Valley International School</div>
+    <div class="logo">
+      <span class="brand">A5x</span>
+      <span class="school-name">Green Valley International School</span>
+    </div>
+
     <div class="menu-btn"><i class="fas fa-bars"></i></div>
-    <nav>
+
+    <nav id="mainNav">
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="admissions.html">Admissions</a>
+      <a href="facilities.html">Facilities</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="btn">Enquire</a>
     </nav>
@@ -283,10 +285,7 @@
 <section class="hero">
   <div>
     <h1>Academic Excellence</h1>
-    <p>
-      A future-ready curriculum designed to inspire curiosity,
-      critical thinking, and lifelong learning.
-    </p>
+    <p>Future-ready curriculum designed for lifelong learning.</p>
   </div>
 </section>
 
@@ -294,8 +293,8 @@
   <div class="container">
     <h2>Our Academic Philosophy</h2>
     <p style="max-width:900px;margin:auto">
-      We follow a concept-driven, student-centric academic approach that
-      builds strong fundamentals, analytical skills, and global awareness.
+      Concept-driven, student-centric education that builds strong fundamentals,
+      analytical skills, and global awareness.
     </p>
   </div>
 </section>
@@ -304,23 +303,9 @@
   <div class="container">
     <h2>Academic Stages</h2>
     <div class="cards">
-      <div class="card">
-        <i class="fas fa-child"></i>
-        <h3>Pre-Primary</h3>
-        <p>Play-based learning for cognitive, emotional, and social development.</p>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-book-reader"></i>
-        <h3>Primary</h3>
-        <p>Strong foundation in literacy, numeracy, creativity, and values.</p>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Secondary</h3>
-        <p>Advanced academics preparing students for higher education success.</p>
-      </div>
+      <div class="card"><i class="fas fa-child"></i><h3>Pre-Primary</h3><p>Play-based learning for early development.</p></div>
+      <div class="card"><i class="fas fa-book-reader"></i><h3>Primary</h3><p>Strong foundation in literacy and numeracy.</p></div>
+      <div class="card"><i class="fas fa-graduation-cap"></i><h3>Secondary</h3><p>Advanced academics for higher education.</p></div>
     </div>
   </div>
 </section>
@@ -329,23 +314,9 @@
   <div class="container">
     <h2>Teaching Methodology</h2>
     <div class="cards">
-      <div class="card">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Concept-Based Learning</h3>
-        <p>Deep understanding instead of rote memorization.</p>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-laptop-code"></i>
-        <h3>Smart Classrooms</h3>
-        <p>Digital tools enhancing interactive learning.</p>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-users"></i>
-        <h3>Personal Attention</h3>
-        <p>Small class sizes and continuous assessment.</p>
-      </div>
+      <div class="card"><i class="fas fa-lightbulb"></i><h3>Concept Learning</h3><p>Understanding over memorization.</p></div>
+      <div class="card"><i class="fas fa-laptop-code"></i><h3>Smart Classes</h3><p>Technology-enhanced classrooms.</p></div>
+      <div class="card"><i class="fas fa-users"></i><h3>Personal Attention</h3><p>Small class sizes & mentoring.</p></div>
     </div>
   </div>
 </section>
@@ -353,18 +324,15 @@
 <footer>
   <div class="container footer-grid">
     <div>
-      <h3>About Us</h3>
-      <p>Empowering students through innovation and global education standards.</p>
+      <h3>About</h3>
+      <p>Empowering students through innovation & excellence.</p>
     </div>
-
     <div>
       <h3>Quick Links</h3>
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="academics.html">Academics</a>
       <a href="admissions.html">Admissions</a>
     </div>
-
     <div>
       <h3>Contact</h3>
       <p>Email: info@greenvalley.edu</p>
@@ -378,9 +346,9 @@
 </footer>
 
 <script>
-  const menuBtn=document.querySelector('.menu-btn');
-  const nav=document.querySelector('nav');
-  menuBtn.onclick=()=>nav.classList.toggle('active');
+const menuBtn=document.querySelector('.menu-btn');
+const nav=document.querySelector('#mainNav');
+menuBtn.onclick=()=>nav.classList.toggle('active');
 </script>
 
 </body>
