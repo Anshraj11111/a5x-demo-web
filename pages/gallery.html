@@ -28,6 +28,7 @@
       background:#f9f9f9;
       color:var(--text);
       line-height:1.6;
+      overflow-x:hidden;
     }
 
     h1,h2,h3{
@@ -59,7 +60,7 @@
     }
 
     .logo{
-      font-size:1.8rem;
+      font-size:1.6rem;
       font-weight:700;
       display:flex;
       align-items:center;
@@ -72,11 +73,16 @@
       padding:5px 10px;
       border-radius:4px;
       margin-right:10px;
-      font-size:1rem;
+      font-size:.9rem;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
     }
 
     nav a{
-      margin-left:28px;
+      margin-left:26px;
       font-weight:500;
       position:relative;
     }
@@ -100,11 +106,17 @@
       font-weight:600;
     }
 
+    .menu-btn{
+      display:none;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
     /* HERO */
     .hero{
-      height:55vh;
+      min-height:55vh;
       background:
-        linear-gradient(rgba(11,44,61,.85),rgba(11,44,61,.9)),
+        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
         url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80');
       background-size:cover;
       background-position:center;
@@ -113,18 +125,19 @@
       justify-content:center;
       text-align:center;
       color:#fff;
-      padding-top:80px;
+      padding:120px 20px 60px;
     }
 
     .hero h1{
-      font-size:3.2rem;
+      font-size:3rem;
       color:#fff;
       margin-bottom:15px;
     }
 
     .hero p{
       font-size:1.2rem;
-      max-width:700px;
+      max-width:750px;
+      margin:auto;
       opacity:.9;
     }
 
@@ -153,7 +166,7 @@
     /* GALLERY GRID */
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:30px;
       margin-top:50px;
     }
@@ -161,7 +174,7 @@
     .gallery-item{
       position:relative;
       overflow:hidden;
-      border-radius:14px;
+      border-radius:16px;
       box-shadow:var(--shadow);
       cursor:pointer;
     }
@@ -174,7 +187,7 @@
     }
 
     .gallery-item:hover img{
-      transform:scale(1.1);
+      transform:scale(1.12);
     }
 
     .gallery-overlay{
@@ -183,7 +196,7 @@
       background:linear-gradient(to top,rgba(11,44,61,.9),transparent);
       display:flex;
       align-items:flex-end;
-      padding:20px;
+      padding:22px;
       opacity:0;
       transition:var(--transition);
     }
@@ -201,12 +214,13 @@
     footer{
       background:#111;
       color:#ccc;
-      padding:70px 0 30px;
+      padding:60px 0 30px;
+      margin-top:80px;
     }
 
     .footer-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:40px;
     }
 
@@ -221,9 +235,31 @@
       color:#777;
     }
 
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
     @media(max-width:768px){
-      .hero h1{font-size:2.3rem}
-      nav{display:none}
+      nav{
+        position:fixed;
+        top:70px;left:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#fff;
+        padding:30px 0;
+        transition:.3s;
+      }
+
+      nav.active{left:0}
+      nav a{margin:15px 0;font-size:1.1rem}
+
+      .menu-btn{display:block}
+
+      .gallery-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+
+      .hero h1{font-size:2.2rem}
     }
   </style>
 </head>
@@ -233,6 +269,7 @@
 <header>
   <div class="container header-inner">
     <div class="logo">Green Valley International School</div>
+    <div class="menu-btn"><i class="fas fa-bars"></i></div>
     <nav>
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
@@ -247,10 +284,7 @@
 <section class="hero">
   <div>
     <h1>Our Campus Gallery</h1>
-    <p>
-      A glimpse into the vibrant campus life, learning spaces,
-      activities, and memorable moments at Green Valley.
-    </p>
+    <p>A glimpse into campus life, learning spaces, activities and achievements.</p>
   </div>
 </section>
 
@@ -259,7 +293,6 @@
     <h2>Life at Green Valley</h2>
 
     <div class="gallery-grid">
-
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80">
         <div class="gallery-overlay"><h3>Campus View</h3></div>
@@ -289,7 +322,6 @@
         <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80">
         <div class="gallery-overlay"><h3>Student Life</h3></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -298,10 +330,7 @@
   <div class="container footer-grid">
     <div>
       <h3>About Us</h3>
-      <p>
-        Green Valley International School nurtures excellence,
-        creativity, and global citizenship.
-      </p>
+      <p>Green Valley International School nurtures excellence and global citizenship.</p>
     </div>
 
     <div>
@@ -323,6 +352,12 @@
     © 2026 Green Valley International School | Designed by <strong>A5x</strong>
   </div>
 </footer>
+
+<script>
+  const menuBtn=document.querySelector('.menu-btn');
+  const nav=document.querySelector('nav');
+  menuBtn.onclick=()=>nav.classList.toggle('active');
+</script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@
   <title>Academics | Green Valley International School</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,18 +18,18 @@
       --primary:#0b2c3d;
       --secondary:#1f7a8c;
       --accent:#cfa44a;
-      --light:#f4f6f8;
-      --dark:#1c1c1c;
+      --light:#f9f9f9;
       --text:#444;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --transition:all .35s ease;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --transition:.35s ease;
     }
 
     body{
       font-family:'Open Sans',sans-serif;
-      background:#f9f9f9;
+      background:var(--light);
       color:var(--text);
       line-height:1.6;
+      overflow-x:hidden;
     }
 
     h1,h2,h3{
@@ -42,6 +42,20 @@
       max-width:1200px;
       margin:auto;
     }
+
+    .btn{
+      display:inline-block;
+      padding:14px 34px;
+      background:var(--accent);
+      color:#0b2c3d;
+      border-radius:50px;
+      font-weight:600;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      text-align:center;
+    }
+
+    .btn:hover{background:#fff}
 
     /* HEADER */
     header{
@@ -61,7 +75,7 @@
     }
 
     .logo{
-      font-size:1.8rem;
+      font-size:1.6rem;
       font-weight:700;
       display:flex;
       align-items:center;
@@ -74,11 +88,16 @@
       padding:5px 10px;
       border-radius:4px;
       margin-right:10px;
-      font-size:1rem;
+      font-size:.9rem;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
     }
 
     nav a{
-      margin-left:28px;
+      margin-left:26px;
       font-weight:500;
       position:relative;
     }
@@ -97,16 +116,19 @@
     nav .btn{
       margin-left:30px;
       padding:10px 24px;
-      background:var(--accent);
-      border-radius:30px;
-      font-weight:600;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:1.6rem;
+      cursor:pointer;
     }
 
     /* HERO */
     .hero{
-      height:60vh;
+      min-height:60vh;
       background:
-        linear-gradient(rgba(11,44,61,.85),rgba(11,44,61,.9)),
+        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
         url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80');
       background-size:cover;
       background-position:center;
@@ -115,20 +137,20 @@
       justify-content:center;
       text-align:center;
       color:#fff;
-      padding-top:80px;
+      padding:120px 20px 60px;
     }
 
     .hero h1{
-      font-size:3.2rem;
+      font-size:3.1rem;
       color:#fff;
       margin-bottom:15px;
-      animation:fadeUp 1s ease;
     }
 
     .hero p{
       font-size:1.2rem;
-      max-width:750px;
+      max-width:800px;
       opacity:.9;
+      margin:auto;
     }
 
     /* SECTIONS */
@@ -153,9 +175,10 @@
       border-radius:2px;
     }
 
+    /* CARDS */
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:30px;
       margin-top:50px;
     }
@@ -163,7 +186,7 @@
     .card{
       background:#fff;
       padding:40px 30px;
-      border-radius:12px;
+      border-radius:14px;
       box-shadow:var(--shadow);
       transition:var(--transition);
       text-align:left;
@@ -180,14 +203,9 @@
       margin-bottom:20px;
     }
 
-    .card h3{
-      margin-bottom:12px;
-    }
+    .card h3{margin-bottom:12px}
 
-    /* CURRICULUM */
-    .curriculum{
-      background:#f0f5f7;
-    }
+    .alt-bg{background:#f0f5f7}
 
     /* FOOTER */
     footer{
@@ -196,14 +214,13 @@
       padding:70px 0 30px;
     }
 
-    footer h3{color:#fff;margin-bottom:20px}
-
     .footer-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:40px;
     }
 
+    footer h3{color:#fff;margin-bottom:20px}
     footer a{display:block;margin-bottom:10px;color:#ccc}
     footer a:hover{color:var(--accent)}
 
@@ -214,14 +231,34 @@
       color:#777;
     }
 
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(40px)}
-      to{opacity:1;transform:translateY(0)}
+    /* RESPONSIVE */
+    @media(max-width:992px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:2.6rem}
     }
 
     @media(max-width:768px){
-      .hero h1{font-size:2.3rem}
-      nav{display:none}
+      nav{
+        position:fixed;
+        top:70px;left:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#fff;
+        padding:30px 0;
+        transition:.3s;
+      }
+
+      nav.active{left:0}
+
+      nav a{margin:15px 0;font-size:1.1rem}
+
+      .menu-btn{display:block}
+
+      .cards{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:2.2rem}
+      .btn{width:100%;max-width:320px}
     }
   </style>
 </head>
@@ -231,6 +268,7 @@
 <header>
   <div class="container header-inner">
     <div class="logo">Green Valley International School</div>
+    <div class="menu-btn"><i class="fas fa-bars"></i></div>
     <nav>
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
@@ -246,7 +284,7 @@
   <div>
     <h1>Academic Excellence</h1>
     <p>
-      A well-structured curriculum designed to inspire curiosity,
+      A future-ready curriculum designed to inspire curiosity,
       critical thinking, and lifelong learning.
     </p>
   </div>
@@ -255,44 +293,33 @@
 <section class="section">
   <div class="container">
     <h2>Our Academic Philosophy</h2>
-    <p>
-      At Green Valley International School, academics are built on a strong
-      foundation of conceptual clarity, practical learning, and global
-      educational standards. Our approach encourages independent thinking,
-      creativity, and academic confidence.
+    <p style="max-width:900px;margin:auto">
+      We follow a concept-driven, student-centric academic approach that
+      builds strong fundamentals, analytical skills, and global awareness.
     </p>
   </div>
 </section>
 
-<section class="section curriculum">
+<section class="section alt-bg">
   <div class="container">
     <h2>Academic Stages</h2>
     <div class="cards">
       <div class="card">
         <i class="fas fa-child"></i>
-        <h3>Pre-Primary Education</h3>
-        <p>
-          Activity-based learning that focuses on cognitive, emotional,
-          and social development through play and exploration.
-        </p>
+        <h3>Pre-Primary</h3>
+        <p>Play-based learning for cognitive, emotional, and social development.</p>
       </div>
 
       <div class="card">
         <i class="fas fa-book-reader"></i>
-        <h3>Primary Education</h3>
-        <p>
-          A balanced curriculum that strengthens literacy, numeracy,
-          creativity, and moral values with structured guidance.
-        </p>
+        <h3>Primary</h3>
+        <p>Strong foundation in literacy, numeracy, creativity, and values.</p>
       </div>
 
       <div class="card">
         <i class="fas fa-graduation-cap"></i>
-        <h3>Secondary Education</h3>
-        <p>
-          Advanced academic programs focused on subject mastery,
-          analytical thinking, and preparation for higher education.
-        </p>
+        <h3>Secondary</h3>
+        <p>Advanced academics preparing students for higher education success.</p>
       </div>
     </div>
   </div>
@@ -305,25 +332,19 @@
       <div class="card">
         <i class="fas fa-lightbulb"></i>
         <h3>Concept-Based Learning</h3>
-        <p>
-          Emphasis on understanding core concepts rather than rote memorization.
-        </p>
+        <p>Deep understanding instead of rote memorization.</p>
       </div>
 
       <div class="card">
         <i class="fas fa-laptop-code"></i>
-        <h3>Technology Integration</h3>
-        <p>
-          Smart classrooms and digital tools to enhance learning experiences.
-        </p>
+        <h3>Smart Classrooms</h3>
+        <p>Digital tools enhancing interactive learning.</p>
       </div>
 
       <div class="card">
         <i class="fas fa-users"></i>
-        <h3>Personalized Attention</h3>
-        <p>
-          Small class sizes ensure individual focus and continuous assessment.
-        </p>
+        <h3>Personal Attention</h3>
+        <p>Small class sizes and continuous assessment.</p>
       </div>
     </div>
   </div>
@@ -333,10 +354,7 @@
   <div class="container footer-grid">
     <div>
       <h3>About Us</h3>
-      <p>
-        Green Valley International School empowers students through
-        innovation, discipline, and global education standards.
-      </p>
+      <p>Empowering students through innovation and global education standards.</p>
     </div>
 
     <div>
@@ -358,6 +376,12 @@
     © 2026 Green Valley International School | Designed by <strong>A5x</strong>
   </div>
 </footer>
+
+<script>
+  const menuBtn=document.querySelector('.menu-btn');
+  const nav=document.querySelector('nav');
+  menuBtn.onclick=()=>nav.classList.toggle('active');
+</script>
 
 </body>
 </html>

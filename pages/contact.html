@@ -29,6 +29,7 @@
       background:var(--light);
       color:var(--text);
       line-height:1.6;
+      overflow-x:hidden;
     }
 
     h1,h2,h3{
@@ -60,7 +61,7 @@
     }
 
     .logo{
-      font-size:1.8rem;
+      font-size:1.6rem;
       font-weight:700;
       display:flex;
       align-items:center;
@@ -73,11 +74,16 @@
       padding:5px 10px;
       border-radius:4px;
       margin-right:10px;
-      font-size:1rem;
+      font-size:.9rem;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
     }
 
     nav a{
-      margin-left:28px;
+      margin-left:26px;
       font-weight:500;
       position:relative;
     }
@@ -101,11 +107,17 @@
       font-weight:600;
     }
 
+    .menu-btn{
+      display:none;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
     /* HERO */
     .hero{
-      height:50vh;
+      min-height:50vh;
       background:
-        linear-gradient(rgba(11,44,61,.88),rgba(11,44,61,.92)),
+        linear-gradient(rgba(11,44,61,.9),rgba(11,44,61,.95)),
         url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80');
       background-size:cover;
       background-position:center;
@@ -114,7 +126,7 @@
       justify-content:center;
       text-align:center;
       color:#fff;
-      padding-top:80px;
+      padding:120px 20px 60px;
     }
 
     .hero h1{
@@ -125,8 +137,9 @@
 
     .hero p{
       font-size:1.2rem;
-      max-width:700px;
+      max-width:750px;
       opacity:.9;
+      margin:auto;
     }
 
     /* SECTION */
@@ -157,7 +170,7 @@
     /* CONTACT GRID */
     .contact-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:40px;
       margin-bottom:80px;
     }
@@ -165,7 +178,7 @@
     .contact-card{
       background:#fff;
       padding:40px 30px;
-      border-radius:14px;
+      border-radius:16px;
       box-shadow:var(--shadow);
       text-align:center;
       transition:var(--transition);
@@ -179,10 +192,6 @@
       font-size:2.2rem;
       color:var(--accent);
       margin-bottom:20px;
-    }
-
-    .contact-card h3{
-      margin-bottom:10px;
     }
 
     /* FORM */
@@ -199,23 +208,20 @@
       margin-bottom:25px;
     }
 
-    .form-group input,
-    .form-group textarea{
+    input,textarea{
       width:100%;
       padding:14px 16px;
       border-radius:8px;
       border:1px solid #ddd;
       font-size:1rem;
-      font-family:'Open Sans',sans-serif;
     }
 
-    .form-group textarea{
+    textarea{
       resize:none;
       height:140px;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus{
+    input:focus,textarea:focus{
       outline:none;
       border-color:var(--secondary);
     }
@@ -233,7 +239,7 @@
     /* MAP */
     .map{
       margin-top:80px;
-      height:400px;
+      height:380px;
       border-radius:16px;
       overflow:hidden;
       box-shadow:var(--shadow);
@@ -255,7 +261,7 @@
 
     .footer-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(3,1fr);
       gap:40px;
     }
 
@@ -270,10 +276,32 @@
       color:#777;
     }
 
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      .contact-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
     @media(max-width:768px){
+      nav{
+        position:fixed;
+        top:70px;left:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#fff;
+        padding:30px 0;
+        transition:.3s;
+      }
+
+      nav.active{left:0}
+      nav a{margin:15px 0;font-size:1.1rem}
+
+      .menu-btn{display:block}
+
+      .contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+
       .hero h1{font-size:2.2rem}
       .contact-form{padding:30px}
-      nav{display:none}
     }
   </style>
 </head>
@@ -283,6 +311,7 @@
 <header>
   <div class="container header-inner">
     <div class="logo">Green Valley International School</div>
+    <div class="menu-btn"><i class="fas fa-bars"></i></div>
     <nav>
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
@@ -297,10 +326,7 @@
 <section class="hero">
   <div>
     <h1>Get in Touch With Us</h1>
-    <p>
-      We’re here to answer your questions, guide admissions,
-      and help you connect with Green Valley International School.
-    </p>
+    <p>We’re here to answer your questions and guide admissions.</p>
   </div>
 </section>
 
@@ -314,19 +340,19 @@
     <div class="contact-grid">
       <div class="contact-card">
         <i class="fas fa-map-marker-alt"></i>
-        <h3>School Address</h3>
+        <h3>Address</h3>
         <p>123 International Avenue,<br>Global City, India</p>
       </div>
 
       <div class="contact-card">
         <i class="fas fa-phone"></i>
-        <h3>Call Us</h3>
+        <h3>Phone</h3>
         <p>+91 XXXXXXXXXX<br>+91 XXXXXXXXXX</p>
       </div>
 
       <div class="contact-card">
         <i class="fas fa-envelope"></i>
-        <h3>Email Us</h3>
+        <h3>Email</h3>
         <p>info@greenvalley.edu<br>admissions@greenvalley.edu</p>
       </div>
     </div>
@@ -339,29 +365,22 @@
       <div class="form-group">
         <input type="text" placeholder="Full Name" required>
       </div>
-
       <div class="form-group">
         <input type="email" placeholder="Email Address" required>
       </div>
-
       <div class="form-group">
         <input type="tel" placeholder="Phone Number" required>
       </div>
-
       <div class="form-group">
         <textarea placeholder="Your Message"></textarea>
       </div>
-
       <div style="text-align:center">
-        <button type="submit" class="submit-btn">Submit Enquiry</button>
+        <button class="submit-btn">Submit Enquiry</button>
       </div>
     </form>
 
     <div class="map">
-      <iframe 
-        src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        loading="lazy">
-      </iframe>
+      <iframe src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
     </div>
 
   </div>
@@ -371,10 +390,7 @@
   <div class="container footer-grid">
     <div>
       <h3>About School</h3>
-      <p>
-        Green Valley International School is committed to excellence,
-        innovation, and holistic student development.
-      </p>
+      <p>Committed to excellence, innovation, and holistic development.</p>
     </div>
 
     <div>
@@ -396,6 +412,12 @@
     © 2026 Green Valley International School | Designed by <strong>A5x</strong>
   </div>
 </footer>
+
+<script>
+  const menuBtn=document.querySelector('.menu-btn');
+  const nav=document.querySelector('nav');
+  menuBtn.onclick=()=>nav.classList.toggle('active');
+</script>
 
 </body>
 </html>
